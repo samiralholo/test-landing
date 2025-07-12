@@ -50,8 +50,7 @@ export default function Navigation({ isScrolled = false, activeSection = "home" 
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <button onClick={() => scrollToSection("#home")} className="flex items-center space-x-2 rtl:space-x-reverse">
-            <img src="logo.svg" className="h-10 flex items-center justify-center" alt="" />
-            <span className={`font-bold text-xl ${isScrolled ? "text-secondary-500" : "text-white"}`}>SUKOON</span>
+            <img src="logo.png" className="w-auto" alt="SUKOON" />
           </button>
 
           {/* Desktop Navigation */}

@@ -149,3 +149,7 @@ html {
 .border-orange-200 {
   border-color: rgb(254 215 170);
 }
+
+.text-yellow-300 {
+  color: rgb(244 248 211 / var(--tw-text-opacity, 1)) !important;
+}

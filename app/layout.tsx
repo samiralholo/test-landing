@@ -1,8 +1,9 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
-import { Inter, Noto_Sans_Arabic } from "next/font/google"
+import { Inter, Almarai } from "next/font/google"
 import "./globals.css"
 import { I18nProvider } from "@/lib/i18n"
+import { Toaster } from "@/components/ui/sonner"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -10,10 +11,11 @@ const inter = Inter({
   variable: "--font-inter",
 })
 
-const notoArabic = Noto_Sans_Arabic({
+const almarai = Almarai({
   subsets: ["arabic"],
   display: "swap",
   variable: "--font-arabic",
+  weight: ["300", "400", "700", "800"]
 })
 
 export const metadata: Metadata = {
@@ -38,7 +40,10 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-    generator: 'v0.dev'
+  icons: {
+    icon: '/fav.ico',
+  },
+  generator: 'v0.dev'
 }
 
 export const viewport: Viewport = {
@@ -56,8 +61,9 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ar" dir="rtl" suppressHydrationWarning>
-      <body className={`${inter.variable} ${notoArabic.variable} font-arabic antialiased`} suppressHydrationWarning>
+      <body className={`${inter.variable} ${almarai.variable} font-arabic antialiased`} suppressHydrationWarning>
         <I18nProvider>{children}</I18nProvider>
+        <Toaster />
       </body>
     </html>
   )

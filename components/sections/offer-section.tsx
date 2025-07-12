@@ -1,22 +1,22 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
-import { Sparkles, ArrowRight } from "lucide-react"
-import { useI18n } from "@/lib/i18n"
-import { Button } from "@/components/ui/button"
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { Sparkles, ArrowRight } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
+import { Button } from "@/components/ui/button";
 
 export default function OfferSection() {
-  const { t, dir } = useI18n()
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const { t, dir } = useI18n();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const scrollToContact = () => {
-    const element = document.querySelector("#contact")
+    const element = document.querySelector("#contact");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
     <section
@@ -29,7 +29,10 @@ export default function OfferSection() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23ffffff' fillOpacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: `url("/sukoon-pattern.png")`,
+            backgroundRepeat: "repeat",
+            backgroundPosition: "center",
+            backgroundSize: "contain",
           }}
         />
       </div>
@@ -101,18 +104,8 @@ export default function OfferSection() {
               <ArrowRight className={`h-5 w-5 ${dir === "rtl" ? "mr-2" : "ml-2"}`} />
             </Button>
           </motion.div>
-
-          {/* Discount Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-            transition={{ duration: 0.6, delay: 0.9, type: "spring", stiffness: 200 }}
-            className="inline-block mt-8 px-6 py-3 bg-yellow-400 text-primary-900 rounded-full font-bold text-lg shadow-lg"
-          >
-            10% خصم
-          </motion.div>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

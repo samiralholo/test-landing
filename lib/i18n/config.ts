@@ -1,7 +1,7 @@
-export type Locale = "ar" | "en"
+export type Locale = "ar" | "en";
 
-export const locales: Locale[] = ["ar", "en"]
-export const defaultLocale: Locale = "ar"
+export const locales: Locale[] = ["ar", "en"];
+export const defaultLocale: Locale = "ar";
 
 export const localeConfig = {
   ar: {
@@ -16,11 +16,8 @@ export const localeConfig = {
     flag: "🇺🇸",
     fontClass: "font-sans",
   },
-}
+};
 
 export function detectLocale(): Locale {
-  if (typeof window === "undefined") return defaultLocale
-
-  const browserLang = navigator.language.split("-")[0]
-  return locales.includes(browserLang as Locale) ? (browserLang as Locale) : defaultLocale
+  return defaultLocale;
 }

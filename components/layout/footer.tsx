@@ -24,16 +24,13 @@ export default function Footer() {
           {/* Brand + description */}
           <div>
             <div className="flex items-center space-x-2 rtl:space-x-reverse mb-6">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-teal-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">S</span>
-              </div>
-              <span className="font-bold text-xl">SUKOON</span>
+              <img src="logo.png" className="w-auto" alt="SUKOON" />
             </div>
 
             <p className="text-gray-400 mb-6">{t("footer.description")}</p>
 
             {/* Social */}
-            <div className="flex space-x-4 rtl:space-x-reverse">
+            {/* <div className="flex space-x-4 rtl:space-x-reverse">
               {social.map((s) => (
                 <Link
                   key={s.label}
@@ -44,11 +41,11 @@ export default function Footer() {
                   <span className="text-sm font-bold">{s.icon}</span>
                 </Link>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Services */}
-          <div>
+          {/* <div>
             <h3 className="text-lg font-bold mb-6">{t("footer.services.title")}</h3>
             <ul className="space-y-3 text-gray-400">
               {(t("footer.services.items", []) as string[]).map((item, index) => (
@@ -59,10 +56,10 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* Company */}
-          <div>
+          {/* <div>
             <h3 className="text-lg font-bold mb-6">{t("footer.company.title")}</h3>
             <ul className="space-y-3 text-gray-400">
               {(t("footer.company.items", []) as string[]).map((item, index) => (
@@ -73,10 +70,10 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* Support */}
-          <div>
+          {/* <div>
             <h3 className="text-lg font-bold mb-6">{t("footer.support.title")}</h3>
             <ul className="space-y-3 text-gray-400">
               {(t("footer.support.items", []) as string[]).map((item, index) => (
@@ -87,7 +84,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">

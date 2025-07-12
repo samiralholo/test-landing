@@ -1,71 +1,66 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { ChevronLeft, ChevronRight, Play } from "lucide-react"
-import { useI18n } from "@/lib/i18n"
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const heroSlides = [
   {
     id: 1,
-    image: "/hero/1.jpg",
+    image: "/hero/1.png",
     alt: "Modern coworking space in Damascus",
   },
   {
     id: 2,
-    image: "/hero/2.jpg",
+    image: "/hero/2.png",
     alt: "Freelancers working in SUKOON",
   },
-  {
-    id: 3,
-    image: "/hero/3.jpg",
-    alt: "Students studying in quiet environment",
-  },
-]
+];
 
 export default function HeroSection() {
-  const { t, dir } = useI18n()
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const { t, dir } = useI18n();
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   useEffect(() => {
-    if (!isAutoPlaying) return
+    if (!isAutoPlaying) return;
 
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
-    }, 5000)
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
 
-    return () => clearInterval(interval)
-  }, [isAutoPlaying])
+    return () => clearInterval(interval);
+  }, [isAutoPlaying]);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
-  }
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
-  }
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  };
 
   const scrollToContact = () => {
-    const element = document.querySelector("#contact")
+    const element = document.querySelector("#contact");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   const scrollToServices = () => {
-    const element = document.querySelector("#services")
+    const element = document.querySelector("#services");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
     <section
       id="home"
-      className="relative h-screen overflow-hidden bg-gradient-to-br from-primary-100 to-secondary-100"
+      className="relative h-screen overflow-hidden bg-gradient-to-br from-primary to-secondary"
       dir={dir}
     >
       {/* Background Images */}
@@ -116,11 +111,21 @@ export default function HeroSection() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="space-y-8 text-white"
             >
-              <motion.h1
+              <motion.h2
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
+              >
+                {t("hero.soon")}
+              </motion.h2>
+              
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-4xl md:text-6xl lg:text-7xl font-bold leading-relaxed"
+                style={{ lineHeight: "1.3" }} 
               >
                 {t("hero.title")}
               </motion.h1>
@@ -148,15 +153,6 @@ export default function HeroSection() {
                   {t("hero.cta")}
                 </Button>
 
-                <Button
-                  onClick={scrollToServices}
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-primary-900 px-8 py-4 text-lg font-semibold bg-transparent backdrop-blur-sm transition-all duration-300"
-                >
-                  <Play className={`h-5 w-5 ${dir === "rtl" ? "ml-2" : "mr-2"}`} />
-                  {t("hero.ctaSecondary")}
-                </Button>
               </motion.div>
             </motion.div>
           </div>
@@ -168,7 +164,9 @@ export default function HeroSection() {
         onClick={prevSlide}
         onMouseEnter={() => setIsAutoPlaying(false)}
         onMouseLeave={() => setIsAutoPlaying(true)}
-        className={`absolute ${dir === "rtl" ? "right-4" : "left-4"} top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50`}
+        className={`absolute ${
+          dir === "rtl" ? "right-4" : "left-4"
+        } top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50`}
         aria-label="Previous slide"
       >
         {dir === "rtl" ? <ChevronRight className="h-6 w-6" /> : <ChevronLeft className="h-6 w-6" />}
@@ -178,7 +176,9 @@ export default function HeroSection() {
         onClick={nextSlide}
         onMouseEnter={() => setIsAutoPlaying(false)}
         onMouseLeave={() => setIsAutoPlaying(true)}
-        className={`absolute ${dir === "rtl" ? "left-4" : "right-4"} top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50`}
+        className={`absolute ${
+          dir === "rtl" ? "left-4" : "right-4"
+        } top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50`}
         aria-label="Next slide"
       >
         {dir === "rtl" ? <ChevronLeft className="h-6 w-6" /> : <ChevronRight className="h-6 w-6" />}
@@ -220,5 +220,5 @@ export default function HeroSection() {
         </motion.div>
       </motion.div>
     </section>
-  )
+  );
 }

@@ -4,30 +4,30 @@
  * Supports RTL layout and internationalization
  */
 
-"use client"
+"use client";
 
-import { useState, useEffect, useCallback } from "react"
-import Image from "next/image"
-import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
-import { useI18n } from "@/lib/i18n"
-import { Button } from "@/components/ui/button"
+import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useI18n } from "@/lib/i18n";
+import { Button } from "@/components/ui/button";
 
 // Hero slide data structure
 interface HeroSlide {
-  id: number
-  image: string
-  titleKey: string
-  subtitleKey: string
-  descriptionKey: string
-  ctaKey: string
-  ctaSecondaryKey: string
+  id: number;
+  image: string;
+  titleKey: string;
+  subtitleKey: string;
+  descriptionKey: string;
+  ctaKey: string;
+  ctaSecondaryKey: string;
 }
 
 const heroSlides: HeroSlide[] = [
   {
     id: 1,
-    image: "/1.jpg",
+    image: "/1.png",
     titleKey: "hero.slide1.title",
     subtitleKey: "hero.slide1.subtitle",
     descriptionKey: "hero.slide1.description",
@@ -36,72 +36,63 @@ const heroSlides: HeroSlide[] = [
   },
   {
     id: 2,
-    image: "/1.jpg",
+    image: "/2.png",
     titleKey: "hero.slide2.title",
     subtitleKey: "hero.slide2.subtitle",
     descriptionKey: "hero.slide2.description",
     ctaKey: "hero.slide2.cta",
     ctaSecondaryKey: "hero.slide2.ctaSecondary",
   },
-  {
-    id: 3,
-    image: "/1.jpg",
-    titleKey: "hero.slide3.title",
-    subtitleKey: "hero.slide3.subtitle",
-    descriptionKey: "hero.slide3.description",
-    ctaKey: "hero.slide3.cta",
-    ctaSecondaryKey: "hero.slide3.ctaSecondary",
-  },
-]
+];
 
 export default function HeroSlider() {
-  const { t, dir, isLoading } = useI18n()
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
-  const [mounted, setMounted] = useState(false)
+  const { t, dir, isLoading } = useI18n();
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   // Auto-play functionality
   const nextSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
-  }, [])
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  }, []);
 
   const prevSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
-  }, [])
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  }, []);
 
   const goToSlide = useCallback((index: number) => {
-    setCurrentSlide(index)
-  }, [])
+    setCurrentSlide(index);
+  }, []);
 
   // Auto-play effect
   useEffect(() => {
-    if (!isAutoPlaying) return
+    if (!isAutoPlaying) return;
 
-    const interval = setInterval(nextSlide, 5000)
-    return () => clearInterval(interval)
-  }, [isAutoPlaying, nextSlide])
+    const interval = setInterval(nextSlide, 5000);
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, nextSlide]);
 
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowLeft") {
-        dir === "rtl" ? nextSlide() : prevSlide()
+        dir === "rtl" ? nextSlide() : prevSlide();
       } else if (event.key === "ArrowRight") {
-        dir === "rtl" ? prevSlide() : nextSlide()
+        dir === "rtl" ? prevSlide() : nextSlide();
       } else if (event.key === " ") {
-        event.preventDefault()
-        setIsAutoPlaying(!isAutoPlaying)
+        event.preventDefault();
+        setIsAutoPlaying(!isAutoPlaying);
       }
-    }
+    };
 
-    window.addEventListener("keydown", handleKeyDown)
-    return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [nextSlide, prevSlide, isAutoPlaying, dir])
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [nextSlide, prevSlide, isAutoPlaying, dir]);
 
   // Component mount effect
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   if (!mounted || isLoading) {
     return (
@@ -111,7 +102,7 @@ export default function HeroSlider() {
           <p className="text-gray-600">{t("common.loading")}</p>
         </div>
       </div>
-    )
+    );
   }
 
   return (
@@ -220,7 +211,9 @@ export default function HeroSlider() {
         onClick={prevSlide}
         onMouseEnter={() => setIsAutoPlaying(false)}
         onMouseLeave={() => setIsAutoPlaying(true)}
-        className={`absolute ${dir === "rtl" ? "right-4" : "left-4"} top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50`}
+        className={`absolute ${
+          dir === "rtl" ? "right-4" : "left-4"
+        } top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50`}
         aria-label="Previous slide"
       >
         {dir === "rtl" ? <ChevronRight className="h-6 w-6" /> : <ChevronLeft className="h-6 w-6" />}
@@ -230,7 +223,9 @@ export default function HeroSlider() {
         onClick={nextSlide}
         onMouseEnter={() => setIsAutoPlaying(false)}
         onMouseLeave={() => setIsAutoPlaying(true)}
-        className={`absolute ${dir === "rtl" ? "left-4" : "right-4"} top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50`}
+        className={`absolute ${
+          dir === "rtl" ? "left-4" : "right-4"
+        } top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50`}
         aria-label="Next slide"
       >
         {dir === "rtl" ? <ChevronLeft className="h-6 w-6" /> : <ChevronRight className="h-6 w-6" />}
@@ -272,5 +267,5 @@ export default function HeroSlider() {
         />
       </div>
     </section>
-  )
+  );
 }
