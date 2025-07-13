@@ -38,7 +38,7 @@ export default function OfferSection() {
       </div>
 
       {/* Floating Elements */}
-      <motion.div
+      {/* <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
         className="absolute top-10 right-10 w-20 h-20 border-2 border-white/20 rounded-full"
@@ -47,7 +47,7 @@ export default function OfferSection() {
         animate={{ y: [0, -20, 0] }}
         transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
         className="absolute bottom-10 left-10 w-16 h-16 bg-white/10 rounded-lg"
-      />
+      /> */}
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div

@@ -112,7 +112,7 @@ const en = {
       subtitle: "We provide everything you need for an ideal and comfortable work environment",
       items: {
         0: { title: "High-Speed Internet", description: "Fast and reliable connection", span: "" },
-        1: { title: "Coffee & Beverages", description: "Varied menu", span: "A varied menu to suit all tastes" },
+        1: { title: "Drinks & Food Menu", description: "Suitable for all tastes", span: "" },
         2: { title: "Printing & Copying", description: "Printing services available", span: "" },
         3: { title: "Tech Support", description: "Technical assistance available", span: "" },
       },

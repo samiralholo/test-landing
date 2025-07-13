@@ -148,7 +148,7 @@ export default function HeroSection() {
                 <Button
                   onClick={scrollToContact}
                   size="lg"
-                  className="bg-secondary-500 hover:bg-secondary-600 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  className="bg-secondary-500 hover:bg-secondary-600 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 whitespace-normal text-center leading-tight min-h-[60px] flex items-center justify-center"
                 >
                   {t("hero.cta")}
                 </Button>
