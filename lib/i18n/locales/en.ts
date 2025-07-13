@@ -19,23 +19,24 @@ const en = {
     language: "Language",
   },
   hero: {
-    title: "SUKOON… Premium Workspace in the Heart of Damascus",
+    soon: "Coming Soon",
+    title: "Premium Co-working Space in the Heart of Damascus",
     subtitle: "Transform your productive day into moments of calm, inspiration, and focus",
-    cta: "Register now and get 10% off the service that suits you",
+    cta: "Enjoy our opening discount and be among our first valued clients!",
     ctaSecondary: "Learn More",
   },
   services: {
-    title: "Choose the service that fits your business needs…",
-    subtitle: "We provide you with an ideal work environment that helps you achieve your professional goals",
+    title: "Multiple services to fit your business needs...",
+    subtitle: "We provide an ideal work environment to help you reach your professional goals",
     coworking: {
       title: "Co-working Spaces",
       description: "Inspiring atmosphere for work and collaboration with professionals",
-      features: ["High-speed internet", "Free coffee and drinks", "Quiet work environment"],
+      features: ["High-speed internet", "Co-working ambiance", "Quiet work environment"],
     },
     private: {
       title: "Private Offices",
       description: "Privacy and a permanent place for your team or company",
-      features: ["Dedicated office", "24/7 access", "Additional services"],
+      features: ["Dedicated office", "24/7 access", "High comfort and privacy"],
     },
     meeting: {
       title: "Meeting Rooms",
@@ -45,11 +46,11 @@ const en = {
     training: {
       title: "Training Space",
       description: "Ideal for workshops and training courses",
-      features: ["Spacious area", "Training equipment", "Flexible arrangement"],
+      features: ["Ideal attendance capacity", "Training equipment", "Flexible arrangement"],
     },
   },
   offer: {
-    title: "Register your interest today… and get 10% off at launch!",
+    title: "Enjoy our opening discount and be among our first valued clients!",
     subtitle: "Be among the first to benefit from our premium services",
     cta: "Reserve your spot now",
   },
@@ -60,10 +61,10 @@ const en = {
       title: "Contact Form",
       firstName: "First Name",
       lastName: "Last Name",
-      firstNamePlaceholder: "John",
-      lastNamePlaceholder: "Doe",
+      firstNamePlaceholder: "Ahmed",
+      lastNamePlaceholder: "Mohamed",
       email: "Email Address",
-      emailPlaceholder: "john@example.com",
+      emailPlaceholder: "ahmed@example.com",
       phone: "Phone Number",
       services: "Interested Services",
       canRent: "I can rent per month",
@@ -83,20 +84,20 @@ const en = {
       phone: "+963 11 123 4567",
       emailLabel: "Email",
       email: "info@sukoon.sy",
-      hoursLabel: "Hours",
+      hoursLabel: "Working Hours",
       hours: "Sunday - Thursday: 8:00 AM - 6:00 PM",
     },
     location: {
       title: "Our Location",
       primeTitle: "Prime Location",
       description: "In the heart of Damascus, at a strategic location that is easy to reach",
-      features: ["Near Transportation", "Parking Available", "Restaurants & Cafes", "Banking Services"],
+      features: ["Near transportation", "Parking available", "Restaurants & Cafés", "Banking services"],
     },
   },
   about: {
     title: "About Us",
     description:
-      "SUKOON is a startup project in the heart of Damascus, seeking to provide a new concept of workspaces designed specifically for freelancers, students, and startups.",
+      "SUKOON is a startup project in the heart of Damascus, aiming to deliver a new concept of workspaces tailored for freelancers, students, and startups.",
     benefits: [
       "Inspiring and comfortable work environment",
       "Strategic location in downtown Damascus",
@@ -110,10 +111,10 @@ const en = {
       title: "Enjoy All The Facilities",
       subtitle: "We provide everything you need for an ideal and comfortable work environment",
       items: {
-        0: { title: "High-Speed Internet", description: "Fast and reliable connection" },
-        1: { title: "Coffee & Beverages", description: "Free drinks throughout the day" },
-        2: { title: "Printing & Copying", description: "Printing services available" },
-        3: { title: "Tech Support", description: "Technical assistance available" },
+        0: { title: "High-Speed Internet", description: "Fast and reliable connection", span: "" },
+        1: { title: "Coffee & Beverages", description: "Varied menu", span: "A varied menu to suit all tastes" },
+        2: { title: "Printing & Copying", description: "Printing services available", span: "" },
+        3: { title: "Tech Support", description: "Technical assistance available", span: "" },
       },
       additional: {
         0: { title: "Photo Studio", description: "Dedicated space for photography and content" },
@@ -123,12 +124,13 @@ const en = {
     },
   },
   footer: {
-    description: "SUKOON - Premium workspaces in the heart of Damascus for freelancers, students, and startups",
+    description:
+      "SUKOON - Premium workspaces in the heart of Damascus for freelancers, students, and startups",
     quickLinks: "Quick Links",
     services: "Our Services",
     contact: "Contact Us",
     copyright: "All rights reserved to SUKOON",
   },
-} as const
+} as const;
 
-export default en
+export default en;

@@ -77,6 +77,7 @@ export default function OfferSection() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight"
+            style={{ lineHeight: "1.4" }} 
           >
             {t("offer.title")}
           </motion.h2>
