@@ -76,7 +76,7 @@ export default function Navigation({ isScrolled = false, activeSection = "home" 
               </button>
             ))}
 
-            <LanguageSwitcher />
+            <LanguageSwitcher isScrolled={isScrolled} />
 
             <Button
               onClick={() => scrollToSection("#contact")}
@@ -93,7 +93,7 @@ export default function Navigation({ isScrolled = false, activeSection = "home" 
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-4 rtl:space-x-reverse">
-            <LanguageSwitcher />
+            <LanguageSwitcher isScrolled={isScrolled} />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`p-2 rounded-lg transition-colors ${
