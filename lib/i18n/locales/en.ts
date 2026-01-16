@@ -15,6 +15,7 @@ const en = {
     home: "Home",
     services: "Services",
     about: "About",
+    community: "Sukoon Community",
     contact: "Contact",
     language: "Language",
   },
@@ -50,9 +51,9 @@ const en = {
     },
   },
   offer: {
-    title: "Enjoy our opening discount and be among our first valued clients!",
-    subtitle: "Be among the first to benefit from our premium services",
-    cta: "Reserve your spot now",
+    title: "Sukoon Community",
+    subtitle: "Are you working on a project, job, or any idea and lacking certain experience? We've gathered the experiences of our visitors to facilitate networking with the right person. Welcome to the Sukoon community.",
+    cta: "Browse Sukoon Community",
   },
   contact: {
     title: "Contact Us",
@@ -79,11 +80,11 @@ const en = {
     info: {
       title: "Contact Information",
       addressLabel: "Address",
-      address: "Coming soon in downtown Damascus",
+      address: "Damascus, Al-Abed Street, Healthy Restaurant Alley, 150 meters towards 29 May Street",
       phoneLabel: "Phone",
-      phone: "+963 11 123 4567",
+      phone: "+963 93 006 0220",
       emailLabel: "Email",
-      email: "info@sukoon.sy",
+      email: "sukoon.coworking@gmail.com",
       hoursLabel: "Working Hours",
       hours: "Sunday - Thursday: 8:00 AM - 6:00 PM",
     },
@@ -121,6 +122,15 @@ const en = {
         1: { title: "Active Community", description: "Network of professionals and creatives" },
         2: { title: "Premium Service", description: "Exceptional work experience" },
       },
+    },
+  },
+  community: {
+    title: "Community",
+    personCard: {
+      email: "Email",
+      phoneNumber: "Phone Number",
+      portfolio: "Portfolio",
+      joining: "Joining",
     },
   },
   footer: {

@@ -7,7 +7,7 @@
 
 import Link from "next/link"
 import { useI18n } from "@/lib/i18n"
-import { Facebook, Instagram } from "lucide-react"
+import { Facebook, Instagram, Phone } from "lucide-react"
 
 export default function Footer() {
   const { t, dir } = useI18n()
@@ -20,8 +20,13 @@ export default function Footer() {
     },
     { 
       label: "Instagram", 
-      href: "https://www.instagram.com/sukoon_coworkingspace", 
+      href: "https://www.instagram.com/suk8n_space", 
       icon: <Instagram className="w-5 h-5" />
+    },
+    { 
+      label: "Phone", 
+      href: "0930060220", 
+      icon: <Phone className="w-5 h-5" />
     },
   ]
 

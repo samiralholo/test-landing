@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { getDriveImageUrl } from "@/lib/utils";
 import { useI18n } from "@/lib/i18n";
+import { Copy } from "lucide-react";
 
 interface PersonCardProps {
   name: string;
@@ -28,6 +29,9 @@ export default function PersonCard({
   const formatDate = (date: string) => {
     const d = new Date(date);
     return `${String(d.getDate()).padStart(2, '0')}-${String(d.getMonth() + 1).padStart(2, '0')}-${d.getFullYear()}`;
+  };
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
   };
   // Get processed image URL
   const imageUrl = image ? getDriveImageUrl(image) : "/placeholder-user.jpg";
@@ -61,21 +65,36 @@ export default function PersonCard({
           {email && (
             <div className="flex justify-between text-muted-foreground">
               <span>{t('community.personCard.email')}:</span>
-              <a href={`mailto:${email}`} className="text-primary font-medium hover:underline">{email}</a>
+              <div className="flex items-center gap-1">
+                <a href={`mailto:${email}`} className="text-primary font-medium hover:underline">{email}</a>
+                <button onClick={() => copyToClipboard(email)} className="p-1 hover:bg-muted rounded">
+                  <Copy className="h-3 w-3" />
+                </button>
+              </div>
             </div>
           )}
 
           {phoneNumber && (
             <div className="flex justify-between text-muted-foreground">
               <span>{t('community.personCard.phoneNumber')}:</span>
-              <a href={`tel:${phoneNumber}`} className="text-primary font-medium hover:underline">{phoneNumber}</a>
+              <div className="flex items-center gap-1">
+                <a href={`tel:${phoneNumber}`} className="text-primary font-medium hover:underline">{phoneNumber}</a>
+                <button onClick={() => copyToClipboard(phoneNumber)} className="p-1 hover:bg-muted rounded">
+                  <Copy className="h-3 w-3" />
+                </button>
+              </div>
             </div>
           )}
 
           {linkPortfolio && (
             <div className="flex justify-between text-muted-foreground">
               <span>{t('community.personCard.portfolio')}:</span>
-              <a href={linkPortfolio} target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">{linkPortfolio}</a>
+              <div className="flex items-center gap-1">
+                <a href={linkPortfolio} target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">{linkPortfolio}</a>
+                <button onClick={() => copyToClipboard(linkPortfolio)} className="p-1 hover:bg-muted rounded">
+                  <Copy className="h-3 w-3" />
+                </button>
+              </div>
             </div>
           )}
 

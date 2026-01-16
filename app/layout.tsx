@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: '/fav.ico',
+    icon: '/fav.png',
   },
   generator: 'v0.dev'
 }

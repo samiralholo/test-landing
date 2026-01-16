@@ -5,17 +5,16 @@ import { motion, useInView } from "framer-motion";
 import { Sparkles, ArrowRight } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export default function OfferSection() {
   const { t, dir } = useI18n();
+  const router = useRouter();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const scrollToContact = () => {
-    const element = document.querySelector("#contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const navigateToCommunity = () => {
+    router.push("/community");
   };
 
   return (
@@ -97,7 +96,7 @@ export default function OfferSection() {
             transition={{ duration: 0.6, delay: 0.7 }}
           >
             <Button
-              onClick={scrollToContact}
+              onClick={navigateToCommunity}
               size="lg"
               className="bg-white text-primary-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
