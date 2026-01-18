@@ -309,7 +309,7 @@ export default function ContactSection() {
             </h3>
             <div className="relative h-96 bg-gray-200 rounded-lg overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d600.6289363340579!2d36.295641805325154!3d33.518820992003576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e72fe2a82a39%3A0xc4ba643b34e4dccd!2s29th%20May%2C%20Damascus%2C%20Syria!5e0!3m2!1sen!2s!4v1768574768082!5m2!1sen!2s"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d831.5836533870474!2d36.29440656963729!3d33.518684816422116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e700334aaa2d%3A0x6145dc484737d5f4!2sSukoon%20Business%20Cafe!5e0!3m2!1sen!2s!4v1768724822345!5m2!1sen!2s"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

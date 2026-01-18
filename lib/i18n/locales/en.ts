@@ -86,7 +86,7 @@ const en = {
       emailLabel: "Email",
       email: "sukoon.coworking@gmail.com",
       hoursLabel: "Working Hours",
-      hours: "Sunday - Thursday: 8:00 AM - 6:00 PM",
+      hours: "8:00 AM - 12:00 AM",
     },
     location: {
       title: "Our Location",
@@ -126,6 +126,7 @@ const en = {
   },
   community: {
     title: "Community",
+    noData: "No persons to show",
     personCard: {
       email: "Email",
       phoneNumber: "Phone Number",

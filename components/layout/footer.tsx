@@ -22,12 +22,7 @@ export default function Footer() {
       label: "Instagram", 
       href: "https://www.instagram.com/suk8n_space", 
       icon: <Instagram className="w-5 h-5" />
-    },
-    { 
-      label: "Phone", 
-      href: "0930060220", 
-      icon: <Phone className="w-5 h-5" />
-    },
+    }
   ]
 
   return (

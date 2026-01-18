@@ -7,7 +7,7 @@ import { Copy } from "lucide-react";
 interface PersonCardProps {
   name: string;
   title: string;
-  category: string;
+  category: string[];
   email?: string;
   phoneNumber?: string;
   linkPortfolio?: string;
@@ -53,7 +53,7 @@ export default function PersonCard({
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-4">
-          {category.split(',').map((cat, index) => (
+          {category.map((cat, index) => (
             <Badge key={index} variant="secondary" className="rounded-md">
               {cat.trim()}
             </Badge>
@@ -89,9 +89,9 @@ export default function PersonCard({
           {linkPortfolio && (
             <div className="flex justify-between text-muted-foreground">
               <span>{t('community.personCard.portfolio')}:</span>
-              <div className="flex items-center gap-1">
-                <a href={linkPortfolio} target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">{linkPortfolio}</a>
-                <button onClick={() => copyToClipboard(linkPortfolio)} className="p-1 hover:bg-muted rounded">
+              <div className="flex items-center gap-1 min-w-0">
+                <a href={linkPortfolio} target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline truncate max-w-32">{linkPortfolio}</a>
+                <button onClick={() => copyToClipboard(linkPortfolio)} className="p-1 hover:bg-muted rounded flex-shrink-0">
                   <Copy className="h-3 w-3" />
                 </button>
               </div>

@@ -86,7 +86,7 @@ const ar = {
       emailLabel: "البريد الإلكتروني",
       email: "sukoon.coworking@gmail.com",
       hoursLabel: "ساعات العمل",
-      hours: "الأحد - الخميس: 8:00 - 18:00",
+      hours: "8:00 AM - 12:00 AM",
     },
     location: {
       title: "موقعنا",
@@ -126,6 +126,7 @@ const ar = {
   },
   community: {
     title: "مجتمع سكون",
+    noData: "لا يوجد أشخاص لعرضها",
     personCard: {
       email: "البريد الإلكتروني",
       phoneNumber: "رقم الهاتف",
