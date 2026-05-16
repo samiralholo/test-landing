@@ -28,21 +28,28 @@ export default function PersonCard({
   const { t } = useI18n();
   const formatDate = (date: string) => {
     const d = new Date(date);
-    return `${String(d.getDate()).padStart(2, '0')}-${String(d.getMonth() + 1).padStart(2, '0')}-${d.getFullYear()}`;
+    return `${String(d.getDate()).padStart(2, "0")}-${String(d.getMonth() + 1).padStart(2, "0")}-${d.getFullYear()}`;
   };
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
   };
   // Get processed image URL
-  const imageUrl = image ? getDriveImageUrl(image) : "/placeholder-user.jpg";
-  
+  const imageUrl = image ? getDriveImageUrl(image) : "/placeholder-user.png";
+
   return (
     <Card className="rounded-2xl border border-muted bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
       <CardContent className="p-6">
         {/* Avatar */}
         <div className="flex items-center gap-4 mb-4">
           <div className="h-14 w-14 rounded-full ring-2 ring-muted overflow-hidden bg-muted">
-            <img src={imageUrl} alt={name} className="h-full w-full object-cover" />
+            <img
+              src={imageUrl}
+              alt={name}
+              className="h-full w-full object-cover"
+              onError={(e) => {
+                e.currentTarget.src = "/placeholder-user.png"; // Replace with your fallback URL
+              }}
+            />
           </div>
 
           <div className="min-w-0">
@@ -64,9 +71,11 @@ export default function PersonCard({
         <div className="space-y-2 text-sm">
           {email && (
             <div className="flex justify-between text-muted-foreground">
-              <span>{t('community.personCard.email')}:</span>
+              <span>{t("community.personCard.email")}:</span>
               <div className="flex items-center gap-1">
-                <a href={`mailto:${email}`} className="text-primary font-medium hover:underline">{email}</a>
+                <a href={`mailto:${email}`} className="text-primary font-medium hover:underline">
+                  {email}
+                </a>
                 <button onClick={() => copyToClipboard(email)} className="p-1 hover:bg-muted rounded">
                   <Copy className="h-3 w-3" />
                 </button>
@@ -76,9 +85,11 @@ export default function PersonCard({
 
           {phoneNumber && (
             <div className="flex justify-between text-muted-foreground">
-              <span>{t('community.personCard.phoneNumber')}:</span>
+              <span>{t("community.personCard.phoneNumber")}:</span>
               <div className="flex items-center gap-1">
-                <a href={`tel:${phoneNumber}`} className="text-primary font-medium hover:underline">{phoneNumber}</a>
+                <a href={`tel:${phoneNumber}`} className="text-primary font-medium hover:underline">
+                  {phoneNumber}
+                </a>
                 <button onClick={() => copyToClipboard(phoneNumber)} className="p-1 hover:bg-muted rounded">
                   <Copy className="h-3 w-3" />
                 </button>
@@ -88,10 +99,20 @@ export default function PersonCard({
 
           {linkPortfolio && (
             <div className="flex justify-between text-muted-foreground">
-              <span>{t('community.personCard.portfolio')}:</span>
+              <span>{t("community.personCard.portfolio")}:</span>
               <div className="flex items-center gap-1 min-w-0">
-                <a href={linkPortfolio} target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline truncate max-w-32">{linkPortfolio}</a>
-                <button onClick={() => copyToClipboard(linkPortfolio)} className="p-1 hover:bg-muted rounded flex-shrink-0">
+                <a
+                  href={linkPortfolio}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary font-medium hover:underline truncate max-w-32"
+                >
+                  {linkPortfolio}
+                </a>
+                <button
+                  onClick={() => copyToClipboard(linkPortfolio)}
+                  className="p-1 hover:bg-muted rounded flex-shrink-0"
+                >
                   <Copy className="h-3 w-3" />
                 </button>
               </div>
@@ -100,7 +121,7 @@ export default function PersonCard({
 
           {addedDate && (
             <div className="flex justify-between text-muted-foreground">
-              <span>{t('community.personCard.joining')}:</span>
+              <span>{t("community.personCard.joining")}:</span>
               <span className="text-foreground font-medium">{formatDate(addedDate)}</span>
             </div>
           )}

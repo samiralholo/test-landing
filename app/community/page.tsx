@@ -57,8 +57,8 @@ export default function CommunityPage() {
           throw new Error('Network error');
         }
         const data: any = await response.json();
-        
-        setPeople(data.data as Person[]);
+        const filteredData = data.data.filter((x:Person) => !!x.name);
+        setPeople(filteredData as Person[]);
       } catch (err) {
         console.error(err);
         setError(true);

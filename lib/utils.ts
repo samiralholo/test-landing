@@ -11,6 +11,9 @@ export function cn(...inputs: ClassValue[]) {
 export const getDriveImageUrl = (url: string): string => {
   if (!url) return '';
   
+  // Check if it's google drive URL
+  if (!url.includes('drive.google.com')) return url;
+
   // Check if it's already a direct URL
   if (url.includes('drive.google.com/uc')) return url;
   

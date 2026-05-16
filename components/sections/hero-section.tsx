@@ -28,36 +28,36 @@ const heroSlides = [
     image: "/hero/4.jpg",
     alt: "Modern coworking space in Damascus",
   },
-  {
-    id: 5,
-    image: "/hero/5.jpg",
-    alt: "Modern coworking space in Damascus",
-  },
-  {
-    id: 6,
-    image: "/hero/6.jpg",
-    alt: "Modern coworking space in Damascus",
-  },
-  {
-    id: 7,
-    image: "/hero/7.jpg",
-    alt: "Modern coworking space in Damascus",
-  },
-  {
-    id: 8,
-    image: "/hero/8.jpg",
-    alt: "Modern coworking space in Damascus",
-  },
-  {
-    id: 9,
-    image: "/hero/9.jpg",
-    alt: "Modern coworking space in Damascus",
-  },
-  {
-    id: 10,
-    image: "/hero/10.jpg",
-    alt: "Modern coworking space in Damascus",
-  },
+  // {
+  //   id: 5,
+  //   image: "/hero/5.jpg",
+  //   alt: "Modern coworking space in Damascus",
+  // },
+  // {
+  //   id: 6,
+  //   image: "/hero/6.jpg",
+  //   alt: "Modern coworking space in Damascus",
+  // },
+  // {
+  //   id: 7,
+  //   image: "/hero/7.jpg",
+  //   alt: "Modern coworking space in Damascus",
+  // },
+  // {
+  //   id: 8,
+  //   image: "/hero/8.jpg",
+  //   alt: "Modern coworking space in Damascus",
+  // },
+  // {
+  //   id: 9,
+  //   image: "/hero/9.jpg",
+  //   alt: "Modern coworking space in Damascus",
+  // },
+  // {
+  //   id: 10,
+  //   image: "/hero/10.jpg",
+  //   alt: "Modern coworking space in Damascus",
+  // },
 ];
 
 export default function HeroSection() {
